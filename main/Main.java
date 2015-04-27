@@ -1,6 +1,7 @@
 package main;
 
 import allocator.Allocator;
+import allocator.LeakyAllocator;
 import allocator.SimpleAllocator;
 
 public class Main {
@@ -11,6 +12,7 @@ public class Main {
             SimpleAllocator.builder().build(),
             // Long-lived allocations -- 6 minutes to stable, about 1GB stable data
 //            SimpleAllocator.builder().rate(50).count(200).lambda(5).lifetime(600000).sizeEach(1024).build()
+            new LeakyAllocator(),
         };
 
         final long startTick = System.currentTimeMillis();

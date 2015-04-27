@@ -28,7 +28,7 @@ public class SimpleAllocator implements Allocator {
 
     public static class Builder {
         // defaults should account for 78MB of young space
-        private int rate = 1, sizeEach = 64, count = 4096, lifetime = 20000, lambda = 1;
+        private int rate = 1, sizeEach = 64, count = 4096, lifetime = 20_000, lambda = 1;
         private Builder() {}
         public Builder rate(int r) { rate = r; return this; }
         public Builder sizeEach(int s) { sizeEach = s; return this; }
